@@ -2,7 +2,7 @@ public class GuessGame {
     Player p1;
     Player p2;
     Player p3;
-    public void startGame() {
+    public void  startGame() {
         p1=new Player ();
         p2=new Player ();
         p3=new Player ();
@@ -25,7 +25,6 @@ public class GuessGame {
             System.out.println ("The second player think that it - "+ guessp2);
             guessp3 = p3.number;
             System.out.println ("The third player think that it - "+ guessp3);
-
             if (guessp1==targetNumber) {
                 p1isRight=true;
             }
@@ -37,7 +36,6 @@ public class GuessGame {
             }
 
             if (p1isRight || p2isRight || p3isRight) {
-
                 System.out.println ("We have a winner");
                 System.out.println ("Did the first player guess?"+ p1isRight);
                 System.out.println ("Did the second player guess?"+ p2isRight);
@@ -51,10 +49,16 @@ public class GuessGame {
         } //over cycle
     } //end metod
 } // end class
-
-public class GameLaucher {
+class GameLaucher {
     public static void main (String[   ] args) {
         GuessGame game=new GuessGame ();
         game.startGame();
+    }
+}
+class Player {
+    int number = 0; //здесь хранится вариант числа, a variant of the number is stored here.
+    public void guess () {
+        number= (int) (Math.random()*10);
+        System.out.println("I make, the number is "+ number);
     }
 }
