@@ -2,15 +2,16 @@ public class Triangle {
     double area;
     int height;
     int length;
+
     public static void main(String[] args) {
         int x =0;
-        Triangle [] ta = new Triangle[4];
+        Triangle [] ta = new Triangle[4];   // создаем массив из 4 треугольников
         while ( x < 4 ) {
-            ta[x] = new Triangle();
+            ta[x] = new Triangle(); // создаем треугольники с заданными в формуле параментрами
             ta[x].height = (x + 1) * 2;
             ta[x].length = x + 4;
             ta[x].setArea ();
-            System.out.print ("треугольник " + x + ", зона");
+            System.out.print ("треугольник " + x + ", зона");   // выводим на экран
             System.out.println(" = " + ta[x].area );
             x = x + 1;
         }
@@ -21,7 +22,7 @@ public class Triangle {
         System.out.print ("y = " + y);
         System.out.println(", зона t5 = " + t5.area);
     }
-    void setArea() {
-       area  = (height * length) / 2;
+    void setArea() {                    // расчет площади треугольника;
+        area  = (height * length) / 2;
     }
 }
